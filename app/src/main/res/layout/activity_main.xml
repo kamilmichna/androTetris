@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:background="#141713"
-        tools:context=".MainActivity"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#141713"
+    tools:context=".MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_weight="5" />
+        android:layout_weight="5" >
+
+        <com.example.androTetris.MatrixView
+            android:id="@+id/canvas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0" />
+    </GridLayout>
 
     <LinearLayout
         android:id="@+id/gameControls"
@@ -30,7 +36,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Up"></Button>
+                android:text="Up" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,17 +45,20 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Left">
+                    android:text="Left"
+                    tools:ignore="ButtonStyle">
                 </Button>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Top">
+                    android:text="Top"
+                    tools:ignore="ButtonStyle">
                 </Button>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Right">
+                    android:text="Right"
+                    tools:ignore="ButtonStyle">
                 </Button>
         </LinearLayout>
     </LinearLayout>
