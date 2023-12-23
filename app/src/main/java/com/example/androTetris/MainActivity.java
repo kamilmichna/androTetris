@@ -10,7 +10,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        View canvasHolder = findViewById(R.id.canvas);
         setContentView(R.layout.activity_main);
+        MatrixView canvas = findViewById(R.id.canvas);
+        Matrix matrix = new Matrix();
+        canvas.setMatrix(matrix.matrix);
     }
 }

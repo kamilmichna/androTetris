@@ -5,7 +5,7 @@ public class MatrixObject extends Matrix {
     private MatrixObjectVariant activeVariant;
 
     public MatrixObject(String[][] matrix, MatrixObjectVariant[] variants) {
-        super(matrix);
+//        super(matrix);
         this.variants = variants;
     }
 

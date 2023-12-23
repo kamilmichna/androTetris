@@ -1,9 +1,32 @@
 package com.example.androTetris;
 
-public class Matrix {
-    public String[][] matrix;
 
-    public Matrix(String[][] matrix) {
-        this.matrix = matrix;
+// x for empty space
+// y for active block
+// z for inactive blocks
+public class Matrix {
+    public char[][] matrix = {
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},
+            {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'}
+    };
+
+    public Matrix() {
     }
 }
