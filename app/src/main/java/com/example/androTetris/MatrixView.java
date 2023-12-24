@@ -30,7 +30,7 @@ public class MatrixView extends View {
 
         drawVerticalGrid(canvas,width,height);
         drawHorizontalGrid(canvas,width,height);
-        drawMatrix(canvas, matrix,width,height);
+        drawMatrix(canvas,matrix,width,height);
     }
 
     private void drawVerticalGrid(Canvas canvas, int width, int height) {
@@ -75,5 +75,6 @@ public class MatrixView extends View {
     public void setMatrix(char[][] matrix)
     {
         this.matrix = matrix;
+        invalidate();
     }
 }

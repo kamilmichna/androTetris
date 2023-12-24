@@ -11,19 +11,20 @@ public class Matrix {
     }
 
 
-    public void drawMatrixObject(int yPos, int xPos) {
-        char[][] matrix = {{'z','z','z','z'}};
-        MatrixObjectVariant[] arr = {new MatrixObjectVariant("left", matrix)};
-        MatrixObject obj = new MatrixObject(
-                arr
-        );
-
+    public void drawMatrixObject(MatrixObject obj, boolean... clear) {
         int yLen = obj.activeVariant.matrix.length;
         int xLen = obj.activeVariant.matrix[0].length;
-        System.out.println(yLen);
+        boolean shouldClear = clear.length >= 1 ? clear[0] : false;
+        boolean markAsOld = clear.length >= 2 ? clear[1] : false;
         for (int y = 0; y < yLen; y++) {
             for (int x = 0; x < xLen; x++) {
-                    this.matrix[y+yPos][x+xPos] = obj.activeVariant.matrix[y][x];
+                if (shouldClear) {
+                    this.matrix[y+obj.yPos][x+obj.xPos] = 'x';
+                } else if (markAsOld) {
+                    this.matrix[y+obj.yPos][x+obj.xPos] = 'y';
+                } else {
+                    this.matrix[y+obj.yPos][x+obj.xPos] = obj.activeVariant.matrix[y][x];
+                }
             }
         }
     }
