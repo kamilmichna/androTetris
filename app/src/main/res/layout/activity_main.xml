@@ -8,18 +8,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <GridLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_weight="5" >
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_weight="5">
 
         <com.example.androTetris.MatrixView
             android:id="@+id/canvas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="0" />
-    </GridLayout>
+            android:layout_width="700px"
+            android:layout_height="1400px" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/gameControls"

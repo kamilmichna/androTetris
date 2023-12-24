@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         MatrixView canvas = findViewById(R.id.canvas);
         Matrix matrix = new Matrix();
+        matrix.drawMatrixObject(10,2);
         canvas.setMatrix(matrix.matrix);
     }
 }
