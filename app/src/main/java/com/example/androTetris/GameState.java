@@ -1,9 +1,5 @@
 package com.example.androTetris;
 
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.Callable;
-
 public class GameState {
     Matrix matrix;
     MatrixView canvas;
@@ -24,13 +20,13 @@ public class GameState {
 
 
     private void gravityHandler() {
-        if (this.activeObject.yPos < 19) {
+        if (!this.checkGravityCollision()) {
+            matrix.clearActive();
             matrix.drawMatrixObject(this.activeObject, true);
             this.activeObject.setCurrentPos(this.activeObject.xPos, this.activeObject.yPos + 1);
         } else {
             matrix.drawMatrixObject(this.activeObject, false, true);
             this.setNewActiveObject();
-            System.out.println(this.activeObject.yPos);
         }
     }
 
@@ -40,8 +36,27 @@ public class GameState {
         this.activeObject = this.matrixObjects[0];
     }
 
-    private void checkCollisions() {
-//        todo
+    private boolean checkGravityCollision() {
+        int xPos = this.activeObject.xPos;
+        int yPos = this.activeObject.yPos;
+        int matrixXLen = this.activeObject.activeVariant.matrix[0].length;
+        int matrixYLen = this.activeObject.activeVariant.matrix.length;
+
+        if (yPos >= 19) {
+            return true;
+        }
+
+
+
+        for (int i = matrixYLen - 1; i >= 0; i--) {
+            for (int j = matrixXLen - 1; j >= 0; j--) {
+                System.out.println(j+xPos);
+                if ( this.matrix.matrix[i+yPos+1][j+xPos] != 'x') {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     private void setMatrixObjects() {

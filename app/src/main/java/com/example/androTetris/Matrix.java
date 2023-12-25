@@ -29,6 +29,16 @@ public class Matrix {
         }
     }
 
+
+    public void clearActive() {
+        for (int y = 0; y < 20; y++) {
+            for (int x = 0; x < 10; x++) {
+                if (matrix[y][x] == 'z') {
+                    matrix[y][x] = 'x';
+                }
+            }
+        }
+    }
     private char[][] getDefaultMatrix() {
         char[][] arr = {
                 {'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'},

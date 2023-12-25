@@ -21,8 +21,6 @@ public class MatrixView extends View {
     public void onDraw(Canvas canvas){
         int width = this.getWidth();
         int height = this.getHeight();
-        System.out.println(height);
-        System.out.println();
         canvas.drawColor(Color.rgb(0,0,0));
         Paint redPaint = new Paint();
         redPaint.setColor(Color.rgb(255, 0, 0));
@@ -58,13 +56,11 @@ public class MatrixView extends View {
                 if (matrix[x][y] == 'z') {
                     //incactive blocks
                     Paint redPaint = new Paint();
-                    System.out.println("ASD");
                     redPaint.setColor(Color.rgb(255, 0, 0));
                     canvas.drawRect(new Rect(y * cellSize, x * cellSize, y * cellSize + cellSize, x * cellSize + cellSize), redPaint);
                 } else if (matrix[x][y] == 'y') {
                     //active blocks
                     Paint bluePaint = new Paint();
-                    System.out.println("ASD");
                     bluePaint.setColor(Color.rgb(0, 0, 255));
                     canvas.drawRect(new Rect(y * cellSize, x * cellSize, y * cellSize + cellSize, x * cellSize + cellSize), bluePaint);
                 }

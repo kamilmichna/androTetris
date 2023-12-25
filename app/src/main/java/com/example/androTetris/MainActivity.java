@@ -22,6 +22,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void moveLeft(View v) {
+        if (gameState.activeObject.xPos > 0) {
+            gameState.activeObject.xPos--;
+        }
+    }
+
+    public void moveRight(View v) {
+        if (gameState.activeObject.xPos + gameState.activeObject.activeVariant.matrix[0].length < 10) {
+            gameState.activeObject.xPos++;
+        }
+    }
+
     public void tick() {
         GameState currentState = this.gameState;
         new Timer().scheduleAtFixedRate(new TimerTask() {
