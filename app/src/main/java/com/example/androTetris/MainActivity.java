@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void rotate(View v) {
+        this.gameState.rotate();
+    }
+
     public void moveRight(View v) {
         if (gameState.activeObject.xPos + gameState.activeObject.activeVariant.matrix[0].length < 10) {
             gameState.activeObject.xPos++;
