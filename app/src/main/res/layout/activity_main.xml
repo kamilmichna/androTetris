@@ -2,58 +2,68 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#141713"
-    tools:context=".MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="#141713"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="TextView" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:gravity="center"
         android:layout_gravity="center"
-        android:layout_weight="5">
+        android:layout_weight="7"
+        android:gravity="center">
 
         <com.example.androTetris.MatrixView
             android:id="@+id/canvas"
             android:layout_width="700px"
             android:layout_height="1400px" />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/gameControls"
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_weight="1"
         android:layout_gravity="center"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_height="wrap_content">
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Left"
-                    android:onClick="moveLeft"
-                    tools:ignore="ButtonStyle">
-                </Button>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rotate"
-                    android:onClick="rotate"
-                    tools:ignore="ButtonStyle">
-                </Button>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Right"
-                    android:onClick="moveRight"
-                    tools:ignore="ButtonStyle">
-                </Button>
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="moveLeft"
+                android:text="Left"
+                tools:ignore="ButtonStyle"></Button>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rotate"
+                android:text="Rotate"
+                tools:ignore="ButtonStyle"></Button>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="moveRight"
+                android:text="Right"
+                tools:ignore="ButtonStyle"></Button>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

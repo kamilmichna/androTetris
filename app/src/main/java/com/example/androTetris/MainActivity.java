@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -11,13 +12,16 @@ import java.util.concurrent.Callable;
 
 public class MainActivity extends AppCompatActivity {
     GameState gameState;
+    TextView score;
     MatrixView canvas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.canvas = findViewById(R.id.canvas);
-        this.gameState = new GameState(canvas);
+        this.score = findViewById(R.id.score);
+        this.score.setText("Score: 0");
+        this.gameState = new GameState(canvas, score);
         tick();
     }
 
